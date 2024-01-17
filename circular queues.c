@@ -73,7 +73,7 @@ int delete()
         printf("Circular queue underflow\n");
         return -1;
     }
-    value=queue[rear].data;
+    value=queue[front].data;
     if(front==rear)
     {
       front=rear=-1;
