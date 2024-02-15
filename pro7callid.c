@@ -1,6 +1,6 @@
 #include<stdio.h>
 #include<stdlib.h>
-#define MAX 5
+#define MAX 3
 int items[MAX];
 int front=-1,rear=-1;
 void insert(int value);
@@ -75,7 +75,7 @@ void display()
         printf("\n Calls held in the queue are:\n");
         for(i=front;i<=rear;i++)
         {
-            printf("%d",items[i]);
+            printf("%d\t",items[i]);
         }
     }
 }
