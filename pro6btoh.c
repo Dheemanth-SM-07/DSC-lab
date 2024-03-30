@@ -1,24 +1,21 @@
-#include<stdio.h>
-void toh(int n,char source,char space,char dest);
-static int step=0;
+#include <stdio.h>
+void towerOfHanoi(int n, char from_rod, char aux_rod, char to_rod)
+{
+	if (n == 1)
+	{
+		printf("\n Move disk 1 from rod %c to rod %c", from_rod, to_rod);
+		return;
+	}
+	towerOfHanoi(n-1, from_rod, aux_rod, to_rod);
+	printf("\n Move disk %d from rod %c to rod %c", n, from_rod, to_rod);
+	towerOfHanoi(n-1, aux_rod, to_rod, from_rod);
+}
+
 int main()
 {
-    int n;
-    printf("\n Enter the number of rings:");
-    scanf("%d",&n);
-    toh(n,'A','B','C');
-    return 0;
-}
-void toh(int n,char A,char B,char C)
-{
-    if(n==1)
-    {
-        printf("\n Step %d:Move %d from %c to %c",++step,n,A,C);
-    }
-    else
-    {
-        toh(n-1,A,C,B);
-        toh(1,A,B,C);
-        toh(n-1,B,A,C);
-    }
+	int n;
+	printf("\n Enter the numbetr of disc = ");
+	scanf("%d",&n);
+	towerOfHanoi(n, 'A', 'B', 'C'); 
+	return 0;
 }
